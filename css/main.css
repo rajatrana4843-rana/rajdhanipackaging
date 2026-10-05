@@ -1,0 +1,3997 @@
+/* =========================================================
+   RAJDHANI PACKAGING
+   MAIN WEBSITE CSS
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    overflow-x: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+.hero-slider {
+
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Banner ka actual ratio.
+       Isse hero unnecessarily 100vh nahi lega.
+    */
+
+    aspect-ratio: 1908 / 792;
+
+    height: auto;
+
+    min-height: 0;
+
+    max-height: none;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    /*
+       Mobile swipe ke liye
+    */
+
+    touch-action: pan-y;
+
+    /*
+       Image select nahi hogi
+    */
+
+    user-select: none;
+
+    cursor: grab;
+}
+
+
+/* =========================================================
+   SLIDER TRACK
+========================================================= */
+
+.hero-track {
+
+    display: flex;
+
+    width: 100%;
+
+    height: 100%;
+
+    /*
+       4 slides hain:
+
+       Slide 1
+       Slide 2
+       Slide 3
+       Clone Slide 1
+    */
+
+    transform:
+        translate3d(
+            0,
+            0,
+            0
+        );
+
+    transition:
+        transform 0.7s
+        cubic-bezier(
+            0.77,
+            0,
+            0.175,
+            1
+        );
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   INDIVIDUAL SLIDE
+========================================================= */
+
+.hero-slide {
+
+    position: relative;
+
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-slide-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    /*
+       Important:
+       Koi scale/zoom nahi hai.
+       Isse unnecessary blur nahi aayega.
+    */
+
+    transform: none;
+
+    /*
+       Banner ko poora fill karega.
+    */
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    /*
+       Image drag/select disable.
+    */
+
+    pointer-events: none;
+
+    user-select: none;
+
+    /*
+       Normal browser image rendering.
+    */
+
+    image-rendering: auto;
+}
+
+
+/* =========================================================
+   DRAGGING
+========================================================= */
+
+.hero-slider.dragging {
+
+    cursor: grabbing;
+}
+
+
+.hero-slider.dragging
+.hero-track {
+
+    transition: none;
+}
+
+
+/* =========================================================
+   HERO ARROWS
+========================================================= */
+
+.hero-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 52px;
+
+    height: 52px;
+
+    margin: 0;
+
+    padding: 0;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+    backdrop-filter: blur(2px);
+
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   LEFT ARROW
+========================================================= */
+
+.hero-prev {
+
+    left: 25px;
+}
+
+
+/* =========================================================
+   RIGHT ARROW
+========================================================= */
+
+.hero-next {
+
+    right: 25px;
+}
+
+
+/* =========================================================
+   ARROW HOVER
+========================================================= */
+
+.hero-arrow:hover {
+
+    background: #f58220;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   ARROW ACTIVE
+========================================================= */
+
+.hero-arrow:active {
+
+    transform:
+        translateY(-50%)
+        scale(0.95);
+}
+
+
+/* =========================================================
+   HERO DOTS
+========================================================= */
+
+.hero-dots {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    z-index: 50;
+}
+
+
+/* =========================================================
+   SINGLE DOT
+========================================================= */
+
+.hero-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.80
+        );
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   ACTIVE DOT
+========================================================= */
+
+.hero-dot.active {
+
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: #f58220;
+}
+
+
+/* =========================================================
+   TABLET HERO
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .hero-slider {
+
+        width: 100%;
+
+        aspect-ratio: 1908 / 792;
+
+        height: auto;
+
+        min-height: 0;
+
+        max-height: none;
+    }
+
+
+    .hero-prev {
+
+        left: 18px;
+    }
+
+
+    .hero-next {
+
+        right: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HERO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-slider {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        max-height: none;
+
+        aspect-ratio: 1908 / 792;
+    }
+
+
+    .hero-slide {
+
+        height: 100%;
+    }
+
+
+    .hero-slide-image {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center center;
+    }
+
+
+    .hero-arrow {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+
+    .hero-prev {
+
+        left: 12px;
+    }
+
+
+    .hero-next {
+
+        right: 12px;
+    }
+
+
+    .hero-dots {
+
+        bottom: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE HERO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-slider {
+
+        aspect-ratio: 1908 / 792;
+    }
+
+
+    .hero-arrow {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .hero-prev {
+
+        left: 8px;
+    }
+
+
+    .hero-next {
+
+        right: 8px;
+    }
+
+
+    .hero-dot {
+
+        width: 7px;
+
+        height: 7px;
+    }
+
+
+    .hero-dot.active {
+
+        width: 21px;
+    }
+
+
+    .hero-dots {
+
+        bottom: 10px;
+
+        gap: 6px;
+    }
+
+}
+
+
+/* =========================================================
+   =========================================================
+   MARQUEE SECTION
+   =========================================================
+========================================================= */
+
+.marquee-section {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #F1EFEF;
+
+    padding: 20px 0;
+}
+
+
+/* =========================================================
+   MARQUEE WRAPPER
+========================================================= */
+
+.marquee-wrapper {
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MARQUEE TRACK
+========================================================= */
+
+.marquee-track {
+
+    display: flex;
+
+    width: max-content;
+
+    /*
+       Infinite animation
+    */
+
+    animation:
+        marqueeMove
+        25s
+        linear
+        infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   MARQUEE HOVER = PAUSE
+========================================================= */
+
+.marquee-wrapper:hover
+.marquee-track {
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   MARQUEE GROUP
+========================================================= */
+
+.marquee-group {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MARQUEE ITEM
+========================================================= */
+
+.marquee-item {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+    color: #EC0909;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    line-height: 1;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MARQUEE STAR
+========================================================= */
+
+.marquee-star {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 38px;
+
+    color: #EC0909;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   MARQUEE INFINITE ANIMATION
+========================================================= */
+
+@keyframes marqueeMove {
+
+    from {
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            );
+    }
+
+
+    to {
+
+        /*
+           Exactly 50%.
+
+           Kyunki 2 identical groups hain.
+        */
+
+        transform:
+            translate3d(
+                -50%,
+                0,
+                0
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MARQUEE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .marquee-section {
+
+        padding: 17px 0;
+    }
+
+
+    .marquee-item {
+
+        font-size: 15px;
+
+        letter-spacing: 0.6px;
+    }
+
+
+    .marquee-star {
+
+        margin: 0 28px;
+
+        font-size: 17px;
+    }
+
+
+    .marquee-track {
+
+        animation-duration: 22s;
+    }
+
+}
+
+
+/* =========================================================
+   MARQUEE MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .marquee-section {
+
+        padding: 14px 0;
+    }
+
+
+    .marquee-item {
+
+        font-size: 13px;
+
+        letter-spacing: 0.4px;
+    }
+
+
+    .marquee-star {
+
+        margin: 0 22px;
+
+        font-size: 15px;
+    }
+
+
+    .marquee-track {
+
+        animation-duration: 20s;
+    }
+
+}
+
+
+/* =========================================================
+   END
+========================================================= */
+
+/* =========================================================
+   PREMIUM SHOP BY CATEGORIES
+========================================================= */
+
+.categories-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 80px 100px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.categories-container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.categories-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   TITLE WRAPPER
+========================================================= */
+
+.categories-title-wrap {
+
+    position: relative;
+}
+
+
+/* =========================================================
+   SMALL EYEBROW
+========================================================= */
+
+.categories-eyebrow {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #e56d2f;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.categories-title-wrap h2 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   ORANGE TITLE LINE
+========================================================= */
+
+.categories-title-line {
+
+    display: block;
+
+    width: 55px;
+
+    height: 3px;
+
+    margin-top: 15px;
+
+    background: #e56d2f;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   SEE ALL BUTTON
+========================================================= */
+
+.categories-shop-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    min-width: 165px;
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    border: 1px solid #e56d2f;
+
+    border-radius: 3px;
+
+    background: #e56d2f;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.categories-shop-btn i {
+
+    font-size: 12px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.categories-shop-btn:hover {
+
+    background: #ffffff;
+
+    color: #e56d2f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            229,
+            109,
+            47,
+            0.18
+        );
+}
+
+
+.categories-shop-btn:hover i {
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.categories-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.category-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    min-height: 365px;
+
+    padding: 18px 18px 24px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 18px
+        rgba(
+            0,
+            0,
+            0,
+            0.055
+        );
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   TOP ORANGE LINE
+========================================================= */
+
+.category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: #e56d2f;
+
+    transform:
+        scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.category-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(
+            229,
+            109,
+            47,
+            0.35
+        );
+
+    box-shadow:
+        0 18px 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+}
+
+
+.category-card:hover::before {
+
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.category-number {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    color: #d9d9d9;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.category-card:hover
+.category-number {
+
+    color: #e56d2f;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.category-image-wrap {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding-top: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   IMAGE CIRCLE
+========================================================= */
+
+.category-image-circle {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        #f2f2f2;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(
+            0,
+            0,
+            0,
+            0.035
+        );
+
+    transition:
+        background 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   IMAGE CIRCLE INNER EFFECT
+========================================================= */
+
+.category-image-circle::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border: 1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.category-image-circle img {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.category-card:hover
+.category-image-circle {
+
+    background: #eeeeee;
+
+    transform: scale(1.025);
+}
+
+
+.category-card:hover
+.category-image-circle img {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.category-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    flex: 1;
+
+    padding: 0 8px;
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.category-content h3 {
+
+    margin: 0 0 10px;
+
+    color: #1b1b1b;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.category-card:hover
+.category-content h3 {
+
+    color: #e56d2f;
+}
+
+
+/* =========================================================
+   EXPLORE LINK
+========================================================= */
+
+.category-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #888888;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+
+.category-link i {
+
+    font-size: 10px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.category-card:hover
+.category-link {
+
+    color: #e56d2f;
+
+    gap: 10px;
+}
+
+
+.category-card:hover
+.category-link i {
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .categories-section {
+
+        padding:
+            70px 0 80px;
+    }
+
+
+    .categories-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 20px;
+    }
+
+
+    .category-card {
+
+        min-height: 350px;
+    }
+
+
+    .category-image-circle {
+
+        width: 175px;
+
+        height: 175px;
+    }
+
+
+    .category-content h3 {
+
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .categories-header {
+
+        align-items: flex-end;
+
+        margin-bottom: 35px;
+    }
+
+
+    .categories-title-wrap h2 {
+
+        font-size: 36px;
+    }
+
+
+    .categories-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+
+    .category-card {
+
+        min-height: 350px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .categories-section {
+
+        padding:
+            55px 0 65px;
+    }
+
+
+    .categories-container {
+
+        padding:
+            0 15px;
+    }
+
+
+    .categories-header {
+
+        align-items: flex-start;
+
+        margin-bottom: 30px;
+
+        gap: 20px;
+    }
+
+
+    .categories-title-wrap {
+
+        flex: 1;
+    }
+
+
+    .categories-eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .categories-title-wrap h2 {
+
+        font-size: 30px;
+
+        line-height: 1.1;
+    }
+
+
+    .categories-shop-btn {
+
+        min-width: auto;
+
+        height: 42px;
+
+        padding:
+            0 15px;
+
+        font-size: 11px;
+    }
+
+
+    .categories-shop-btn i {
+
+        display: none;
+    }
+
+
+    .categories-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .category-card {
+
+        min-height: 285px;
+
+        padding:
+            15px 12px 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .category-number {
+
+        top: 13px;
+
+        right: 14px;
+
+        font-size: 11px;
+    }
+
+
+    .category-image-wrap {
+
+        padding-top: 15px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .category-image-circle {
+
+        width: 125px;
+
+        height: 125px;
+    }
+
+
+    .category-content {
+
+        padding:
+            0 3px;
+    }
+
+
+    .category-content h3 {
+
+        margin-bottom: 7px;
+
+        font-size: 16px;
+    }
+
+
+    .category-link {
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .categories-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .categories-shop-btn {
+
+        height: 40px;
+    }
+
+
+    .category-image-circle {
+
+        width: 120px;
+
+        height: 120px;
+    }
+
+
+    .category-card {
+
+        min-height: 280px;
+    }
+
+}
+/* =========================================================
+   PACKAGING SOLUTIONS SECTION
+========================================================= */
+
+.packaging-solutions {
+
+    width: 100%;
+
+    padding: 0 100px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.packaging-solutions-container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        1fr;
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT LARGE BANNER
+========================================================= */
+
+.packaging-main-banner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 570px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: #e79acd;
+}
+
+
+/* =========================================================
+   LEFT IMAGE
+========================================================= */
+
+.packaging-main-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 85%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+/* =========================================================
+   LEFT IMAGE HOVER
+========================================================= */
+
+.packaging-main-banner:hover
+.packaging-main-image {
+
+    transform:
+        scale(1.02);
+}
+
+
+/* =========================================================
+   LEFT TEXT
+========================================================= */
+
+.packaging-main-content {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 30px;
+
+    z-index: 5;
+
+    width: 420px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.packaging-main-label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.packaging-main-content h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    line-height: 0.98;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   QUALITY HIGHLIGHT
+========================================================= */
+
+.packaging-main-content h2 span {
+
+    display: inline-block;
+
+    padding:
+        3px 9px;
+
+    background: #ff6900;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.packaging-features {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 30px;
+
+    z-index: 6;
+
+    width: 185px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.packaging-feature {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.packaging-feature i {
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   RIGHT COLUMN
+========================================================= */
+
+.packaging-side-column {
+
+    display: grid;
+
+    grid-template-rows:
+        1fr
+        1fr;
+
+    gap: 20px;
+
+    height: 570px;
+}
+
+
+/* =========================================================
+   RIGHT BANNER
+========================================================= */
+
+.packaging-side-banner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   RIGHT BANNER HOVER
+========================================================= */
+
+.packaging-side-banner:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================================
+   SIDE IMAGE
+========================================================= */
+
+.packaging-side-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    transition:
+        transform 0.6s ease;
+    }
+
+
+/* =========================================================
+   SIDE IMAGE HOVER
+========================================================= */
+
+.packaging-side-banner:hover
+.packaging-side-image {
+
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================================
+   YELLOW BANNER
+========================================================= */
+
+.packaging-yellow-banner {
+
+    background: #ffc448;
+}
+
+
+/* =========================================================
+   YELLOW CONTENT
+========================================================= */
+
+.packaging-yellow-content {
+
+    position: absolute;
+
+    top: 45px;
+
+    left: 28px;
+
+    z-index: 5;
+
+    width: 300px;
+}
+
+
+/* =========================================================
+   YELLOW HEADING
+========================================================= */
+
+.packaging-yellow-content h3 {
+
+    margin: 0 0 18px;
+
+    color: #ae4700;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 0.98;
+}
+
+
+/* =========================================================
+   YELLOW DESCRIPTION
+========================================================= */
+
+.packaging-yellow-content p {
+
+    margin: 0 0 22px;
+
+    color: #ad4700;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.packaging-explore-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 135px;
+
+    height: 40px;
+
+    padding:
+        0 18px;
+
+    border-radius: 4px;
+
+    background: #b94b00;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.packaging-explore-btn:hover {
+
+    background: #8f3800;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BLUE BANNER
+========================================================= */
+
+.packaging-blue-banner {
+
+    background: #1685cf;
+}
+
+
+/* =========================================================
+   BLUE CONTENT
+========================================================= */
+
+.packaging-blue-content {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 25px;
+
+    right: 25px;
+
+    z-index: 5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BLUE HEADING
+========================================================= */
+
+.packaging-blue-content h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   BLUE DESCRIPTION
+========================================================= */
+
+.packaging-blue-content p {
+
+    margin: 10px 0 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .packaging-solutions {
+
+        padding:
+            65px 0;
+    }
+
+
+    .packaging-solutions-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 22px;
+    }
+
+
+    .packaging-main-banner {
+
+        height: 500px;
+    }
+
+
+    .packaging-side-column {
+
+        height: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .packaging-main-banner {
+
+        height: 450px;
+
+        border-radius: 20px;
+    }
+
+
+    .packaging-side-column {
+
+        height: 450px;
+    }
+
+
+    .packaging-main-content {
+
+        left: 30px;
+
+        top: 30px;
+
+        width: 260px;
+    }
+
+
+    .packaging-main-content h2 {
+
+        font-size: 36px;
+    }
+
+
+    .packaging-main-label {
+
+        font-size: 13px;
+    }
+
+
+    .packaging-features {
+
+        right: 25px;
+
+        top: 32px;
+
+        width: 160px;
+
+        gap: 14px;
+    }
+
+
+    .packaging-feature {
+
+        font-size: 13px;
+    }
+
+
+    .packaging-yellow-content {
+
+        left: 24px;
+
+        top: 30px;
+
+        width: 260px;
+    }
+
+
+    .packaging-yellow-content h3 {
+
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .packaging-solutions {
+
+        padding:
+            50px 0;
+    }
+
+
+    .packaging-solutions-container {
+
+        padding:
+            0 15px;
+
+        gap: 15px;
+    }
+
+
+    .packaging-main-banner {
+
+        height: 420px;
+
+        border-radius: 18px;
+    }
+
+
+    .packaging-main-content {
+
+        top: 25px;
+
+        left: 22px;
+
+        width: 210px;
+    }
+
+
+    .packaging-main-label {
+
+        font-size: 11px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .packaging-main-content h2 {
+
+        font-size: 29px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .packaging-main-content h2 span {
+
+        padding:
+            2px 6px;
+    }
+
+
+    .packaging-features {
+
+        top: 25px;
+
+        right: 15px;
+
+        width: 125px;
+
+        gap: 10px;
+    }
+
+
+    .packaging-feature {
+
+        gap: 6px;
+
+        font-size: 10px;
+    }
+
+
+    .packaging-feature i {
+
+        font-size: 11px;
+    }
+
+
+    .packaging-side-column {
+
+        height: auto;
+
+        grid-template-rows:
+            230px
+            230px;
+
+        gap: 15px;
+    }
+
+
+    .packaging-side-banner {
+
+        border-radius: 18px;
+    }
+
+
+    .packaging-yellow-content {
+
+        top: 25px;
+
+        left: 20px;
+
+        width: 190px;
+    }
+
+
+    .packaging-yellow-content h3 {
+
+        font-size: 22px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .packaging-yellow-content p {
+
+        font-size: 11px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .packaging-explore-btn {
+
+        min-width: 110px;
+
+        height: 34px;
+
+        padding:
+            0 13px;
+
+        font-size: 11px;
+    }
+
+
+    .packaging-blue-content {
+
+        top: 20px;
+
+        left: 15px;
+
+        right: 15px;
+    }
+
+
+    .packaging-blue-content h3 {
+
+        font-size: 16px;
+    }
+
+
+    .packaging-blue-content p {
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .packaging-main-banner {
+
+        height: 390px;
+    }
+
+
+    .packaging-main-content {
+
+        width: 180px;
+    }
+
+
+    .packaging-main-content h2 {
+
+        font-size: 25px;
+    }
+
+
+    .packaging-features {
+
+        width: 110px;
+    }
+
+
+    .packaging-feature {
+
+        font-size: 9px;
+    }
+
+
+    .packaging-side-column {
+
+        grid-template-rows:
+            210px
+            210px;
+    }
+
+}
+/* =========================================================
+   FEATURED PRODUCTS SECTION
+========================================================= */
+
+.featured-products {
+
+    width: 100%;
+
+    padding: 60px 100px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.featured-products-container {
+
+    width: 100%;
+
+    max-width: 1165px;
+
+    margin: 0 auto;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.featured-products-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.featured-heading {
+
+    position: relative;
+}
+
+
+.featured-eyebrow {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d45b16;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.featured-heading h2 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   HEADING ORANGE LINE
+========================================================= */
+
+.featured-heading-line {
+
+    display: block;
+
+    width: 55px;
+
+    height: 2px;
+
+    margin-top: 13px;
+
+    border-radius: 20px;
+
+    background: #d45b16;
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.featured-view-all {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    height: 46px;
+
+    padding: 0 21px;
+
+    border-radius: 4px;
+
+    background: #d45b16;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.featured-view-all:hover {
+
+    background: #b84708;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.featured-view-all i {
+
+    font-size: 10px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.featured-view-all:hover i {
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.featured-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VIEWPORT
+
+   IMPORTANT:
+   Horizontal overflow hidden only.
+   Vertical page scrolling remains normal.
+========================================================= */
+
+.featured-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 8px 5px 20px;
+    box-sizing: border-box;
+    cursor: grab;
+    touch-action: pan-y;
+}
+
+
+.featured-viewport:active {
+
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.featured-track {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 20px;
+
+    width: max-content;
+
+    margin: 0;
+
+    padding: 0;
+
+    transform:
+        translate3d(
+            0,
+            0,
+            0
+        );
+
+    transition:
+        transform 0.55s
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        );
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.featured-product-card {
+
+    position: relative;
+
+    flex:
+        0 0 270px;
+
+    width: 300px;
+
+    height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #ededed;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.featured-product-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(
+            212,
+            91,
+            22,
+            0.25
+        );
+
+    box-shadow:
+        0 15px 32px
+        rgba(
+            0,
+            0,
+            0,
+            0.11
+        );
+}
+
+
+/* =========================================================
+   IMAGE BOX
+========================================================= */
+
+.featured-image-box {
+
+    width: 100%;
+
+    height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+
+   Image ko yahan control kiya gaya hai.
+========================================================= */
+
+.featured-image-box img {
+
+    display: block;
+
+    width: auto;
+
+    height: auto;
+
+    max-width: 88%;
+
+    max-height: 325px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    -webkit-user-drag: none;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.featured-product-card:hover
+.featured-image-box img {
+
+    transform:
+        scale(1.035);
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.featured-product-info {
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 0 6px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PRODUCT TITLE
+========================================================= */
+
+.featured-product-info h3 {
+
+    margin: 0 0 7px;
+
+    color: #292929;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.28;
+}
+
+
+/* =========================================================
+   PRODUCT CATEGORY
+========================================================= */
+
+.featured-product-info span {
+
+    display: block;
+
+    color: #999999;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAROUSEL ARROWS
+========================================================= */
+
+.featured-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 100;
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transform:
+        translateY(-50%);
+
+    box-shadow:
+        0 5px 18px
+        rgba(
+            0,
+            0,
+            0,
+            0.14
+        );
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   PREVIOUS
+========================================================= */
+
+.featured-prev {
+
+    left: -23px;
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.featured-next {
+
+    right: -23px;
+}
+
+
+/* =========================================================
+   ARROW HOVER
+========================================================= */
+
+.featured-arrow:hover {
+
+    background: #d45b16;
+
+    border-color: #d45b16;
+
+    color: #ffffff;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.featured-arrow:disabled {
+
+    opacity: 0.35;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .featured-track {
+
+        gap: 20px;
+    }
+
+
+    .featured-product-card {
+
+        flex-basis: 250px;
+
+        width: 250px;
+
+        height: 450px;
+    }
+
+
+    .featured-image-box {
+
+        height: 325px;
+    }
+
+
+    .featured-image-box img {
+
+        max-height: 300px;
+    }
+
+
+    .featured-prev {
+
+        left: -18px;
+    }
+
+
+    .featured-next {
+
+        right: -18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .featured-products {
+
+        padding:
+            60px 0 70px;
+    }
+
+
+    .featured-heading h2 {
+
+        font-size: 36px;
+    }
+
+
+    .featured-product-card {
+
+        flex-basis: 260px;
+
+        width: 260px;
+
+        height: 455px;
+    }
+
+
+    .featured-image-box {
+
+        height: 325px;
+    }
+
+
+    .featured-image-box img {
+
+        max-height: 305px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .featured-products {
+
+        padding:
+            50px 0 60px;
+    }
+
+
+    .featured-products-container {
+
+        padding:
+            0 15px;
+    }
+
+
+    .featured-products-header {
+
+        align-items: flex-end;
+
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .featured-eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .featured-heading h2 {
+
+        font-size: 29px;
+    }
+
+
+    .featured-view-all {
+
+        height: 40px;
+
+        padding:
+            0 12px;
+
+        font-size: 9px;
+    }
+
+
+    .featured-view-all i {
+
+        display: none;
+    }
+
+
+    .featured-track {
+
+        gap: 15px;
+    }
+
+
+    .featured-product-card {
+
+        flex:
+            0 0 calc(
+                100vw - 70px
+            );
+
+        width:
+            calc(
+                100vw - 70px
+            );
+
+        height: 450px;
+
+        padding: 12px;
+
+        border-radius: 14px;
+    }
+
+
+    .featured-image-box {
+
+        height: 330px;
+
+        padding: 7px;
+    }
+
+
+    .featured-image-box img {
+
+        max-width: 85%;
+
+        max-height: 305px;
+    }
+
+
+    .featured-product-info h3 {
+
+        font-size: 16px;
+    }
+
+
+    .featured-product-info span {
+
+        font-size: 9px;
+    }
+
+
+    .featured-arrow {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 11px;
+    }
+
+
+    .featured-prev {
+
+        left: -5px;
+    }
+
+
+    .featured-next {
+
+        right: -5px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .featured-heading h2 {
+
+        font-size: 25px;
+    }
+
+
+    .featured-view-all {
+
+        padding:
+            0 9px;
+
+        font-size: 8px;
+    }
+
+
+    .featured-product-card {
+
+        flex-basis:
+            calc(
+                100vw - 55px
+            );
+
+        width:
+            calc(
+                100vw - 55px
+            );
+
+        height: 425px;
+    }
+
+
+    .featured-image-box {
+
+        height: 310px;
+    }
+
+
+    .featured-image-box img {
+
+        max-height: 290px;
+    }
+
+}
+/* ================================
+   SERVICES SECTION
+================================ */
+
+.services-section {
+    width: 100%;
+    padding: 50px 100px;
+    background: linear-gradient(
+        180deg,
+        #e84e00 0%,
+        #e96b2c 50%,
+        #f18a5c 100%
+    );
+    overflow: hidden;
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.services-content {
+    width: 100%;
+}
+
+.services-small-title {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.services-content h2 {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+
+/* ================================
+   SERVICE BOX
+================================ */
+
+.service-box {
+    position: relative;
+
+    width: 100%;
+    min-height: 130px;
+
+    margin-bottom: 22px;
+    padding: 30px 28px;
+
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    border-radius: 13px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
+}
+
+.service-box:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    flex: 0 0 80px;
+
+    border-radius: 50%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+.service-icon i {
+    color: #df4d00;
+    font-size: 35px;
+    line-height: 1;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+
+.service-text {
+    padding-top: 7px;
+}
+
+.service-text h3 {
+    margin: 0 0 8px;
+
+    color: #050505;
+
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.service-text p {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   SECOND BOX
+================================ */
+
+.service-box-center {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.service-box-center .service-text {
+    order: 1;
+}
+
+.service-box-center .service-icon {
+    order: 2;
+}
+
+
+/* ================================
+   RIGHT SIDE IMAGE
+================================ */
+
+.services-image {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 0;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .services-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .services-image {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .services-small-title {
+        font-size: 22px;
+    }
+
+    .services-content h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .services-section {
+        padding: 45px 0;
+    }
+
+    .services-container {
+        width: 92%;
+        gap: 30px;
+    }
+
+    .services-small-title {
+        font-size: 19px;
+    }
+
+    .services-content h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .service-box {
+        min-height: auto;
+
+        padding: 22px 18px;
+
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .service-icon {
+        width: 65px;
+        height: 65px;
+        flex: 0 0 65px;
+    }
+
+    .service-icon i {
+        font-size: 29px;
+    }
+
+    .service-text {
+        padding-top: 3px;
+    }
+
+    .service-text h3 {
+        font-size: 22px;
+    }
+
+    .service-text p {
+        font-size: 15px;
+    }
+
+    .service-box-center {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .service-box-center .service-text {
+        order: 2;
+    }
+
+    .service-box-center .service-icon {
+        order: 1;
+    }
+
+    .services-image img {
+        width: 100%;
+    }
+}
+
+ /* =========================================
+    RAJDHANI PACKAGING
+    PLASTIC POUCH CONTENT SECTION
+ ========================================= */
+
+.rp-plastic-pouch-content {
+    width: 100%;
+    background: #ffffff;
+    padding: 50px 100px;
+    box-sizing: border-box;
+}
+
+.rp-pouch-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADING
+ ========================================= */
+
+.rp-pouch-container h2 {
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+
+    line-height: 1.25;
+    text-align: left;
+}
+
+
+.rp-pouch-container h1 {
+    margin: 0 0 12px;
+
+    color: #f45112;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.rp-pouch-container h3 {
+    margin: 32px 0 14px;
+
+    color: #111111;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   FAQS
+ ========================================= */
+
+.rp-faq-section {
+    padding-top: 0;
+}
+
+.rp-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rp-faq-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.rp-faq-item summary {
+    position: relative;
+    padding: 16px 48px 16px 20px;
+
+    color: #111111;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.rp-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.rp-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #f45112;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.rp-faq-item[open] summary::after {
+    content: "\2212";
+}
+
+.rp-pouch-container .rp-faq-item p {
+    margin: 0;
+    padding: 0 20px 18px;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+ ========================================= */
+
+.rp-pouch-container p {
+    margin: 0 0 20px;
+
+    color: #161616;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   ORANGE HIGHLIGHT
+ ========================================= */
+
+.rp-orange-text {
+    color: #f45112;
+}
+
+
+/* =========================================
+   BULLET LIST
+ ========================================= */
+
+.rp-pouch-list {
+    margin: -5px 0 32px;
+    padding-left: 30px;
+
+    color: #161616;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.rp-pouch-list li {
+    margin-bottom: 2px;
+    padding-left: 2px;
+}
+
+.rp-pouch-list strong {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LAST PARAGRAPH
+ ========================================= */
+
+.rp-pouch-container p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   TABLET
+ ========================================= */
+
+@media (max-width: 1000px) {
+
+    .rp-plastic-pouch-content {
+        padding: 45px 0 55px;
+    }
+
+    .rp-pouch-container {
+        width: 90%;
+    }
+
+    .rp-pouch-container h2 {
+        font-size: 34px;
+    }
+
+    .rp-pouch-container p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .rp-pouch-list {
+        font-size: 18px;
+        padding-left: 35px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+ ========================================= */
+
+@media (max-width: 600px) {
+
+    .rp-plastic-pouch-content {
+        padding: 35px 0 45px;
+    }
+
+    .rp-pouch-container {
+        width: 92%;
+    }
+
+    .rp-pouch-container h3 {
+        font-size: 21px;
+    }
+
+    .rp-faq-item summary {
+        font-size: 16px;
+        padding: 14px 44px 14px 16px;
+    }
+
+    .rp-pouch-container .rp-faq-item p {
+        padding: 0 16px 16px;
+    }
+
+    .rp-pouch-container h2 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .rp-pouch-container p {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 23px;
+    }
+
+    .rp-pouch-list {
+        font-size: 16px;
+        line-height: 1.6;
+        padding-left: 25px;
+        margin-bottom: 25px;
+    }
+
+    .rp-pouch-list li {
+        margin-bottom: 8px;
+    }
+}
+/* Footer iframe - full width */
+.footer-iframe {
+    display: block;
+    width: 100vw;
+    height: 560px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Remove unwanted left & right gaps */
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}

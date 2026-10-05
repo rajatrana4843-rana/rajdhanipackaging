@@ -1,0 +1,228 @@
+/* =========================================
+   RAJDHANI PACKAGING FOOTER
+========================================= */
+
+.rp-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #df4b00;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   MAIN FOOTER
+========================================= */
+
+.rp-footer-main {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr 0.85fr 1.25fr;
+    gap: 55px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   FOOTER HEADINGS
+========================================= */
+
+.rp-footer-column h3 {
+    margin: 0 0 30px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.rp-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.rp-contact-icon {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    background: #ffffff;
+    color: #df4b00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.rp-contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.rp-contact-content strong {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.rp-contact-content a,
+.rp-contact-content span {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.rp-contact-content a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   QUICK LINKS / PRODUCT LINKS
+========================================= */
+
+.rp-footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rp-footer-links li {
+    margin-bottom: 16px;
+}
+
+.rp-footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.rp-footer-links a i {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.rp-footer-links a:hover {
+    padding-left: 6px;
+}
+
+/* =========================================
+   ABOUT US
+========================================= */
+
+.rp-about-column p {
+    margin: 0;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.rp-footer-bottom {
+    width: 100%;
+    background: #bd3e00;
+    padding: 18px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.rp-footer-bottom p {
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.rp-footer-bottom a {
+    color: #FECD71;
+    text-decoration: none;
+}
+
+.rp-footer-bottom a:hover {
+    text-decoration: underline;
+}
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+    .rp-footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+    .rp-footer-main {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 0;
+    }
+
+    .rp-footer-column h3 {
+        font-size: 27px;
+        margin-bottom: 22px;
+    }
+
+    .rp-contact-item {
+        margin-bottom: 25px;
+    }
+
+    .rp-contact-content strong {
+        font-size: 20px;
+    }
+
+    .rp-contact-content a,
+    .rp-contact-content span {
+        font-size: 17px;
+    }
+
+    .rp-footer-links a {
+        font-size: 18px;
+    }
+
+    .rp-about-column p {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+
+    .rp-footer-bottom {
+        padding: 15px;
+    }
+
+    .rp-footer-bottom p {
+        font-size: 14px;
+    }
+}

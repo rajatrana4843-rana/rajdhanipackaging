@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <meta name="robots" content="noindex">
+    <script>
+        var oldMap = {"flour-packaging-bags":"atta-pouch-manufacturer","royal-phool-makhana-pouch":"makhana-pouch-manufacturers"};
+        var value = new URLSearchParams(window.location.search).get("id");
+        value = oldMap[value] || value;
+        window.location.replace(
+            value && /^[a-z0-9-]+$/.test(value) ? "/product/" + value + "/" : "/shop/"
+        );
+    </script>
+</head>
+<body>
+    <a href="/shop/">https://www.plasticpouchandbags.com/shop/</a>
+</body>
+</html>

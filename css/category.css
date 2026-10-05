@@ -1,0 +1,449 @@
+/* =========================================
+   CATEGORY PAGE
+========================================= */
+
+.category-page {
+    background: #ffffff;
+    padding: 0;
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.category-page .container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CATEGORY HERO BANNER
+========================================= */
+
+.category-hero-banner {
+    width: 100%;
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #ff9900 0%,
+        #ff731f 48%,
+        #ff5959 100%
+    );
+}
+
+
+.category-hero-content {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================
+   CATEGORY TITLE
+========================================= */
+
+.category-hero-banner h1 {
+    margin: 0 0 18px;
+
+    font-size: 35px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CATEGORY DESCRIPTION
+========================================= */
+
+.category-hero-banner p {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+.category-section {
+    padding: 70px 0 80px;
+    background: #ffffff;
+}
+
+
+/* =========================================
+   PRODUCT COUNT
+========================================= */
+
+.category-count {
+    margin-bottom: 28px;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    color: #555;
+}
+
+
+/* =========================================
+   PRODUCTS GRID
+========================================= */
+
+.category-products {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.category-products .product-card {
+    background: #ffffff;
+
+    border: 1px solid #dcdcdc;
+
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+.category-products .product-card:hover {
+    border-color: #c8c8c8;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE LINK
+========================================= */
+
+.category-products .product-image-link {
+    width: 100%;
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE AREA
+========================================= */
+
+.category-products .product-image {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.category-products .product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.35s ease;
+}
+
+
+.category-products .product-card:hover .product-image img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   PRODUCT CONTENT
+========================================= */
+
+.category-products .product-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 10px 10px 30px 10px;
+}
+
+
+/* =========================================
+   PRODUCT NAME
+========================================= */
+
+.category-products .product-name {
+    display: block;
+
+    color: #222;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    line-height: 1.55;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+
+.category-products .product-name:hover {
+    color: #f36a10;
+}
+
+
+/* =========================================
+   PRODUCT PRICE
+========================================= */
+
+.category-products .product-price {
+    font-size: 15px;
+    font-weight: 400;
+
+    color: #333;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   VIEW PRODUCT BUTTON / LINK
+========================================= */
+
+.category-products .view-product {
+    margin-top: auto;
+
+    color: #f36a10;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+
+.category-products .view-product:hover {
+    color: #222;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .category-products {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+    .category-products .product-image-link {
+        height: 320px;
+    }
+
+    .category-products .product-card {
+        min-height: 480px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+
+    /* HERO */
+
+    .category-hero-banner {
+        min-height: 320px;
+    }
+
+
+    .category-hero-content {
+        padding: 50px 15px;
+    }
+
+
+    .category-hero-banner h1 {
+        font-size: 34px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .category-hero-banner p {
+        font-size: 16px;
+    }
+
+
+    /* PRODUCTS */
+
+    .category-section {
+        padding: 50px 0 60px;
+    }
+
+
+    .category-count {
+        margin-bottom: 22px;
+
+        font-size: 14px;
+    }
+
+
+    .category-products {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+
+    .category-products .product-card {
+        min-height: 400px;
+    }
+
+
+    .category-products .product-image-link {
+        height: 240px;
+
+        padding: 15px;
+    }
+
+
+    .category-products .product-content {
+        padding: 15px 12px 20px;
+    }
+
+
+    .category-products .product-name {
+        font-size: 15px;
+
+        min-height: 44px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .category-products .product-price {
+        font-size: 14px;
+
+        margin-bottom: 14px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+
+    .category-page .container {
+        width: 92%;
+    }
+
+
+    .category-hero-banner {
+        min-height: 280px;
+    }
+
+
+    .category-hero-banner h1 {
+        font-size: 28px;
+    }
+
+
+    .category-hero-banner p {
+        font-size: 14px;
+    }
+
+
+    .category-products {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .category-products .product-card {
+        min-height: 480px;
+    }
+
+
+    .category-products .product-image-link {
+        height: 330px;
+    }
+
+}

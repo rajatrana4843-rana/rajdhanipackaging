@@ -1,0 +1,650 @@
+/* =========================================================
+   RAJDHANI PACKAGING - HEADER CSS
+========================================================= */
+
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* ---------- Font Awesome ---------- */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+
+/* ---------- Reset ---------- */
+
+.site-header,
+.site-header * {
+    box-sizing: border-box;
+}
+
+.site-header {
+    width: 100%;
+    background: #ffffff;
+    position: relative;
+    z-index: 9999;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.header-main {
+    width: 100%;
+    background: #ffffff;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.site-logo img {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.main-navigation {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-item {
+    position: relative;
+    list-style: none;
+}
+
+.nav-link {
+    position: relative;
+
+    height: 92px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Orange underline */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+
+    height: 3px;
+
+    background: #FF6310;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+    color: #FF6310;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Active */
+
+.nav-link.active {
+    color: #FF6310;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   PRODUCTS ARROW
+========================================================= */
+
+.dropdown-toggle i {
+    font-size: 10px;
+    margin-left: 5px;
+
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWN
+========================================================= */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    min-width: 250px;
+
+    margin: 0;
+    padding: 10px 0;
+
+    background: #ffffff;
+
+    border-top: 2px solid #FF6310;
+
+    list-style: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(12px);
+
+    transition: all 0.25s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.dropdown-menu li {
+    width: 100%;
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+
+    padding: 10px 20px;
+
+    color: #333333;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #ffffff;
+    background: #FF6310;
+    padding-left: 25px;
+}
+
+
+/* =========================================================
+   CALL BUTTON
+========================================================= */
+
+.header-call {
+    flex-shrink: 0;
+}
+
+.header-call > a {
+    min-height: 40px;
+
+    padding: 8px 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    background: #FF6310;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border-radius: 3px;
+
+    transition: all 0.3s ease;
+}
+
+.header-call > a:hover {
+    background: #df6d0d;
+    transform: translateY(-2px);
+}
+
+
+/* Phone Icon */
+
+.call-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.call-icon i {
+    font-size: 16px;
+}
+
+
+/* Call Text */
+
+.call-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.call-text small {
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.call-text strong {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 2px;
+
+    display: block;
+
+    background: #222222;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hamburger Animation */
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-navigation {
+    display: none;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-navigation > ul {
+    list-style: none;
+
+    padding: 5px 20px 15px;
+    margin: 0;
+}
+
+.mobile-navigation > ul > li {
+    list-style: none;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.mobile-navigation > ul > li:last-child {
+    border-bottom: 0;
+}
+
+.mobile-navigation > ul > li > a {
+    min-height: 50px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #222222;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.mobile-navigation > ul > li > a:hover,
+.mobile-navigation > ul > li > a.active {
+    color: #f58220;
+}
+
+
+/* Mobile Products */
+
+.mobile-products-toggle i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.open .mobile-products-toggle i {
+    transform: rotate(180deg);
+}
+
+
+/* Mobile Submenu */
+
+.mobile-submenu {
+    display: none;
+
+    list-style: none;
+
+    padding: 0 0 8px 15px;
+    margin: 0;
+}
+
+.mobile-dropdown.open .mobile-submenu {
+    display: block;
+}
+
+.mobile-submenu li {
+    list-style: none;
+}
+
+.mobile-submenu li a {
+    display: block;
+
+    padding: 10px 10px;
+
+    color: #555555;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    border-left: 2px solid #f58220;
+
+    transition: all 0.25s ease;
+}
+
+.mobile-submenu li a:hover {
+    color: #f58220;
+    padding-left: 15px;
+}
+
+
+/* =========================================================
+   MOBILE CALL
+========================================================= */
+
+.mobile-call {
+    padding: 0 25px 20px;
+}
+
+.mobile-call a {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    background: #f58220;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mobile-call i {
+    font-size: 13px;
+}
+
+.mobile-call strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STICKY HEADER
+========================================================= */
+
+.site-header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+
+    animation: headerSlideDown 0.3s ease;
+}
+
+@keyframes headerSlideDown {
+
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .header-container {
+        min-height: 85px;
+    }
+
+    .site-logo img {
+        width: 150px;
+    }
+
+    .nav-link {
+        height: 85px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .nav-link::after {
+        left: 12px;
+        right: 12px;
+    }
+
+    .header-call > a {
+        padding: 7px 12px;
+    }
+
+    .call-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .call-text strong {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        min-height: 78px;
+        padding: 0 20px;
+    }
+
+    .site-logo img {
+        width: 145px;
+    }
+
+    .main-navigation,
+    .header-call {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-navigation {
+        display: none;
+    }
+
+    .mobile-navigation.open {
+        display: block;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-container {
+        min-height: 70px;
+        padding: 0 15px;
+    }
+
+    .site-logo img {
+        width: 130px;
+    }
+
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-menu-btn span {
+        width: 23px;
+    }
+
+    .mobile-navigation > ul {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mobile-call {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}

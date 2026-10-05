@@ -1,0 +1,711 @@
+/* =========================================
+   PRODUCT PAGE
+========================================= */
+
+.product-page {
+    background: #ffffff;
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.product-page .container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.product-breadcrumb-section {
+    padding: 18px 0;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+
+.product-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    line-height: 1.6;
+    color: #777;
+}
+
+
+.product-breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+
+.product-breadcrumb a:hover {
+    color: #f36a10;
+}
+
+
+.product-breadcrumb .current-product {
+    color: #999;
+}
+
+
+/* =========================================
+   MAIN PRODUCT SECTION
+========================================= */
+
+.single-product-section {
+    padding: 55px 0 70px;
+}
+
+
+/* IMPORTANT:
+   align-items: stretch rakha hai
+   taki left column right content ki height
+   ke according stretch ho aur sticky image work kare
+*/
+
+.single-product-grid {
+    display: grid;
+    grid-template-columns: 48% 1fr;
+    gap: 55px;
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.single-product-left {
+    min-width: 0;
+    align-self: stretch;
+}
+
+
+/* =========================================
+   STICKY PRODUCT IMAGE
+========================================= */
+
+.single-product-image {
+    width: 100%;
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    position: sticky;
+    top: 100px;
+
+    padding: 20px;
+
+    border: 1px solid #eeeeee;
+}
+
+
+.single-product-image img {
+    width: 80%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* =========================================
+   RIGHT SIDE PRODUCT INFO
+========================================= */
+
+.single-product-info {
+    min-width: 0;
+    padding-top: 5px;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.single-product-category {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #f36a10;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+
+    text-decoration: none;
+}
+
+
+.single-product-category:hover {
+    color: #222;
+}
+
+
+/* =========================================
+   PRODUCT TITLE
+========================================= */
+
+.single-product-info h1 {
+    margin: 0 0 10px;
+
+    color: #222;
+
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+
+/* =========================================
+   PRODUCT PRICE
+========================================= */
+
+.single-product-price {
+    margin-bottom: 24px;
+
+    color: #f36a10;
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.product-info-divider {
+    width: 100%;
+    height: 1px;
+
+    background: #e5e5e5;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   PRODUCT SPECIFICATIONS
+========================================= */
+
+.product-specifications h2 {
+    margin: 0 0 25px;
+
+    color: #222;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.specifications-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.specifications-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   TABLE CELLS
+========================================= */
+
+.specifications-table th,
+.specifications-table td {
+    padding: 13px 16px;
+
+    border: 1px solid #e2e2e2;
+
+    text-align: left;
+    vertical-align: middle;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   LEFT COLUMN
+========================================= */
+
+.specifications-table th {
+    width: 42%;
+
+    background: #f7f7f7;
+
+    color: #333;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RIGHT COLUMN
+========================================= */
+
+.specifications-table td {
+    background: #ffffff;
+
+    color: #666;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   ENQUIRY BUTTON
+========================================= */
+
+.product-enquiry-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 28px;
+
+    min-width: 150px;
+
+    padding: 14px 28px;
+
+    background: #f36a10;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.product-enquiry-btn:hover {
+    background: #222222;
+}
+
+
+/* =========================================
+   PRODUCT DESCRIPTION
+========================================= */
+
+.product-description-section {
+    padding: 0 0 80px;
+    
+}
+
+
+.product-description-box {
+    max-width: 100%;
+
+    border-top: 1px solid #e5e5e5;
+
+    padding-top: 45px;
+    
+}
+
+
+.product-description-box h2 {
+    margin: 0 0 18px;
+
+    color: #222;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+.product-description-box p {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PRODUCT SEO CONTENT
+========================================= */
+
+.single-product-subheading {
+    margin: -6px 0 16px;
+
+    color: #df4b00;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+.product-seo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.product-seo-content h2,
+.product-seo-content p {
+    text-align: left;
+}
+
+
+.product-seo-content p {
+    margin: 0 0 18px;
+}
+
+
+.product-seo-content h3 {
+    margin: 30px 0 12px;
+
+    color: #222;
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+
+.product-seo-content ul,
+.product-seo-content ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+.product-seo-content strong {
+    color: #222;
+}
+
+
+.product-seo-content a {
+    color: #df4b00;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   PRODUCT FAQS
+========================================= */
+
+.product-faq-section {
+    padding: 0 0 80px;
+}
+
+
+.product-faq-section .container > h2 {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+
+    color: #222;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+.product-faq-list {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.product-faq-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+
+.product-faq-item summary {
+    position: relative;
+    padding: 16px 48px 16px 20px;
+
+    color: #222;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+
+.product-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.product-faq-item summary::after {
+    content: "+";
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #df4b00;
+    font-size: 22px;
+}
+
+
+.product-faq-item[open] summary::after {
+    content: "\2212";
+}
+
+
+.product-faq-item p {
+    margin: 0;
+    padding: 0 20px 18px;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+@media (max-width: 600px) {
+
+    .product-seo-content h3 {
+        font-size: 19px;
+    }
+
+    .product-faq-item summary {
+        padding: 14px 44px 14px 16px;
+        font-size: 15px;
+    }
+
+    .product-faq-item p {
+        padding: 0 16px 16px;
+    }
+}
+
+
+/* =========================================
+   PRODUCT NOT FOUND
+========================================= */
+
+.product-not-found {
+    width: 90%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 100px 0;
+
+    text-align: center;
+}
+
+
+.product-not-found h1 {
+    margin: 0 0 20px;
+
+    color: #222;
+}
+
+
+.product-not-found a {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: #f36a10;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .single-product-grid {
+        grid-template-columns: 45% 1fr;
+        gap: 40px;
+    }
+
+
+    .single-product-image {
+        height: 500px;
+    }
+
+
+    .single-product-info h1 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .product-page .container {
+        width: 92%;
+    }
+
+
+    .single-product-section {
+        padding: 40px 0 50px;
+    }
+
+
+    .single-product-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+        align-items: start;
+    }
+
+
+    /* MOBILE PAR STICKY REMOVE */
+
+    .single-product-left {
+        align-self: auto;
+    }
+
+
+    .single-product-image {
+        position: relative;
+        top: auto;
+
+        height: 420px;
+
+        padding: 20px;
+    }
+
+
+    .single-product-info {
+        padding-top: 0;
+    }
+
+
+    .single-product-info h1 {
+        font-size: 28px;
+    }
+
+
+    .product-specifications h2 {
+        font-size: 22px;
+    }
+
+
+    .product-description-section {
+        padding-bottom: 55px;
+    }
+
+
+    .product-description-box {
+        padding-top: 35px;
+    }
+
+
+    .product-description-box h2 {
+        font-size: 24px;
+    }
+
+
+    .specifications-table th,
+    .specifications-table td {
+        padding: 12px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .product-breadcrumb {
+        font-size: 12px;
+    }
+
+
+    .single-product-image {
+        height: 340px;
+        padding: 15px;
+    }
+
+
+    .single-product-info h1 {
+        font-size: 25px;
+    }
+
+
+    .single-product-price {
+        font-size: 19px;
+    }
+
+
+    .product-enquiry-btn {
+        width: 100%;
+    }
+
+
+    .specifications-table {
+        min-width: 480px;
+    }
+
+}
